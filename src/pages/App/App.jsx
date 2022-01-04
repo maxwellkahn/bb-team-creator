@@ -10,15 +10,17 @@ function App() {
   return (
     <main className="App">
       {user ? (
-        <Routes>
-          <Route path="/teams/new">
-            <NewTeamPage />
-          </Route>
-          <Route path="/teams">
-            <TeamHistoryPage />
-          </Route>
-          <Navigate to="/teams" />
-        </Routes>
+        <>
+          <Routes>
+            <Route path="/teams/new">
+              <NewTeamPage />
+            </Route>
+            <Route path="/teams">
+              <TeamHistoryPage />
+            </Route>
+            <Navigate to="/teams" />
+          </Routes>
+        </>
       ) : (
         <AuthPage />
       )}
