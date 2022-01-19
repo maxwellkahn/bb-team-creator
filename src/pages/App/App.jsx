@@ -4,13 +4,15 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import AuthPage from "../AuthPage/AuthPage";
 import NewTeamPage from "../NewTeamPage/NewTeamPage";
 import TeamHistoryPage from "../TeamHistoryPage/TeamHistoryPage";
+import NavBar from "../../components/NavBar/NavBar";
 
 function App() {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
   return (
     <main className="App">
       {user ? (
         <>
+          <NavBar />
           <Routes>
             <Route path="/teams/new">
               <NewTeamPage />
