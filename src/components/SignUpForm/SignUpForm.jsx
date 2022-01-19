@@ -1,6 +1,34 @@
 import { Component } from "react";
 
 export default class SignUpForm extends Component {
+  state = {
+    name: "",
+    email: "",
+    password: "",
+    confirm: "",
+    error: "",
+  };
+
+  handleChange = (evt) => {
+    this.setState({
+      [evt.target.name]: evt.target.value,
+      error: "",
+    });
+  };
+
+  handleSubmit = async (evt) => {
+    evt.preventDefault();
+    try {
+      const formData = { ...this.state };
+      delete formData.error;
+      delete formData.confirm;
+      const user = await SignUpForm(formData);
+      this.props.setUser(user);
+    } catch {
+      this.setState({ error: "Sign Up Failed - Try Again" });
+    }
+  };
+
   render() {
     const disable = this.state.password !== this.state.confirm;
     return (
