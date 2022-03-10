@@ -34,10 +34,13 @@ const userSchema = new Schema(
 );
 
 userSchema.pre("save", function (next) {
+  // save the reference to the user doc
   const user = this;
   if (!user.isModified("password")) return next();
+  // password has been changed - salt and hash it
   bcrypt.hash(user.password, SALT_ROUNDS, function (err, hash) {
     if (err) return next(err);
+    // update the password property with the hash
     user.password = hash;
     return next();
   });

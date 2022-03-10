@@ -21,10 +21,9 @@ export default class SignUpForm extends Component {
     evt.preventDefault();
     try {
       const formData = { ...this.state };
-      console.log("THE FORM DATA: ", formData);
       delete formData.error;
       delete formData.confirm;
-
+      // The promise returned by the signUp service method resolves to the user object included in the payload of the JSON Web Token
       const user = await signUp(formData);
       console.log(user);
       this.props.setUser(user);

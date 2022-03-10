@@ -2,7 +2,9 @@ import * as usersAPI from "./users-api";
 
 export async function signUp(userData) {
   try {
+    // Delegate network request code to users-api.js API module that will return JWT
     const token = await usersAPI.signUp(userData);
+    // persist the "token"
     localStorage.setItem("token", token);
     return getUser();
   } catch {
