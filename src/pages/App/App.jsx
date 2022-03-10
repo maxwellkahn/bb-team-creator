@@ -13,7 +13,7 @@ function App() {
     <main className="App">
       {user ? (
         <>
-          <NavBar />
+          <NavBar user={user} setUser={setUser} />
           <Routes>
             <Route path="/teams/new">
               <NewTeamPage />
@@ -25,7 +25,7 @@ function App() {
           </Routes>
         </>
       ) : (
-        <AuthPage />
+        <AuthPage setUser={setUser} />
       )}
     </main>
   );

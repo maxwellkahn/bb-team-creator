@@ -6,7 +6,7 @@ export async function signUp(userData) {
     localStorage.setItem("token", token);
     return getUser();
   } catch {
-    throw new Error("Invalid Sign Up");
+    throw new Error("Invalid Sign Up - Service Method");
   }
 }
 
