@@ -30,3 +30,7 @@ export function getUser() {
   console.log("THE TOKEN: ", token);
   return token ? JSON.parse(atob(token.split(".")[1])).user : null;
 }
+
+export function logOut() {
+  localStorage.removeItem("token");
+}

@@ -13,12 +13,12 @@ function App() {
     <main className="App">
       {user ? (
         <>
-          <NavBar user={user} />
+          <NavBar user={user} setUser={setUser} />
           <Routes>
             <Route path="/teams/new" element={<NewTeamPage />} />
             <Route path="/teams" element={<TeamHistoryPage />} />
           </Routes>
-          <Navigate to="/teams" />
+          {/* <Navigate to="/teams" /> */}
         </>
       ) : (
         <AuthPage setUser={setUser} />
