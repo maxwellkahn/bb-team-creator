@@ -12,6 +12,16 @@ export async function signUp(userData) {
   }
 }
 
+export async function login(credentials) {
+  try {
+    const token = await usersAPI.login(credentials);
+    localStorage.setItem("token", token);
+    return getUser();
+  } catch {
+    throw new Error("Invalid Login - Service Method");
+  }
+}
+
 export function getToken() {
   // getItem returns null if there's no string
   const token = localStorage.getItem("token");
@@ -27,7 +37,6 @@ export function getToken() {
 
 export function getUser() {
   const token = getToken();
-  console.log("THE TOKEN: ", token);
   return token ? JSON.parse(atob(token.split(".")[1])).user : null;
 }
 
