@@ -46,3 +46,5 @@ const playerSchema = new Schema({
     required: true,
   },
 });
+
+module.exports = playerSchema;
