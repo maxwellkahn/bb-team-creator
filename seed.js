@@ -40,6 +40,12 @@ const Player = require("./models/player");
     ]);
     await Player.deleteMany({});
     const players = await Player.create([
-        {name: '', cost: 6, ma: 6, st: 3, ag: 3, pa: 4, av: 8, skills: ['dodge'], primary: 'G, A', secondary: 'S', team: teams[0]}
+        {name: 'Tribal Linewoman', cost: 50000, ma: 6, st: 3, ag: 3, pa: 4, av: 8, skills: ['Dodge'], primary: 'G', secondary: 'A, S', team: teams[0]},
+        {name: 'Eagle Warrior Thrower', cost: 75000, ma: 6, st: 3, ag: 3, pa: 3, av: 8, skills: ['Dodge', 'Pass'], primary: 'G, P', secondary: 'A, S', team: teams[0]},
+        {name: 'Piranha Warrior Catcher', cost: 75000, ma: 6, st: 3, ag: 3, pa: 5, av: 8, skills: ['Catch', 'Dodge'], primary: 'A, G', secondary: 'S', team: teams[0]},
+        {name: 'Koka Kalim Blitzer', cost: 90000, ma: 6, st: 3, ag: 3, pa: 5, av: 8, skills: ['Block', 'Dodge'], primary: 'G, S', secondary: 'A', team: teams[0]},
+        {name: 'Goblin Bruiser Lineman', cost: 45000, ma: 6, st: 2, ag: 3, pa: 4, av: 8, skills: ['Dodge', 'Right Stuff', 'Stunty', 'Thick Skull'], primary: 'A', secondary: 'G, P, S', team: teams[1]},
+        {name: 'Black Orc', cost: 90000, ma: 4, st: 4, ag: 4, pa: 5, av: 10, skills: ['Brawler', 'Grab'], primary: 'G, S', secondary: 'A, P', team:teams[1]},
+        {name: 'Trained Troll', cost: 115000, ma:4, st: 5, ag: 5, pa: 5, av: 10, skills: ['Always Hungry', 'Loner (3+)', 'Mighty Blow (+1)', 'Projectile Vomit', 'Really Stupid', 'Regeneration', 'Throw Team-mate'], primary: 'S', secondary: 'A, G, P', team: teams[1]}
     ])
 })
