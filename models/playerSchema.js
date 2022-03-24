@@ -45,10 +45,10 @@ const playerSchema = new Schema({
     type: String,
     required: true,
   },
-  team: [
+  roster: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Team",
+      ref: "Roster",
     },
   ],
 });

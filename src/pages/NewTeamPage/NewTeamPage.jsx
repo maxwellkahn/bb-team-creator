@@ -7,10 +7,19 @@ export default function NewTeamPage() {
     console.log("NewTeamPage rendered");
   });
 
+  useEffect(
+    function () {
+      console.log("useEffect with dependency array ran");
+    },
+    [rosterItems]
+  );
+
   return (
     <>
       <h1>NewTeamPage</h1>
-      <button onClick={setRosterItems}>Trigger re-render</button>
+      <button onClick={() => setRosterItems(Date.now())}>
+        Trigger re-render
+      </button>
     </>
   );
 }
