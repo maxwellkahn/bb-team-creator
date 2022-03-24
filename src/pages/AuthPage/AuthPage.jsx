@@ -6,7 +6,7 @@ export default function AuthPage({ setUser }) {
     <main>
       <h1>AuthPage</h1>
       <SignUpForm setUser={setUser} />
-      <LogInForm />
+      <LogInForm setUser={setUser} />
     </main>
   );
 }

@@ -45,10 +45,12 @@ const playerSchema = new Schema({
     type: String,
     required: true,
   },
-  team: {
-    type: Schema.Types.ObjectId,
-    ref: "Team",
-  },
+  team: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Team",
+    },
+  ],
 });
 
 module.exports = playerSchema;

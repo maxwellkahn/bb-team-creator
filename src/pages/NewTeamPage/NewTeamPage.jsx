@@ -1,7 +1,16 @@
+import { useState, useEffect } from "react";
+
 export default function NewTeamPage() {
+  const [rosterItems, setRosterItems] = useState([]);
+
+  useEffect(function () {
+    console.log("NewTeamPage rendered");
+  });
+
   return (
-    <main>
+    <>
       <h1>NewTeamPage</h1>
-    </main>
+      <button onClick={setRosterItems}>Trigger re-render</button>
+    </>
   );
 }
